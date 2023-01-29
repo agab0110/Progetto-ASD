@@ -18,26 +18,21 @@ jobs:
 
         steps:
         - name: Checkout repository
-          uses: actions/checkout@v1
+          uses: actions/checkout@v2
 
         - name: Initialize CodeQL
-          uses: github/codeql-action/init@v2
+          uses: github/codeql-action/init@v1
           with:
             languages: ${{ matrix.language }}
 
         - name: Autobuild
-          uses: github/codeql-action/autobuild@v2
+          uses: github/codeql-action/autobuild@v1
 
         - name: Perform CodeQL Analysis
-          uses: github/codeql-action/analyze@v2
+          uses: github/codeql-action/analyze@v1
 
   build:
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      security-events: write
-      contents: read
-      packages: write
 
     steps:
     - uses: actions/checkout@v3
