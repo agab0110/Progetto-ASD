@@ -7,10 +7,10 @@ RUN apt-get install -y git
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/
 
-RUN git clone https://github.com/agab0110/ASD-Project.git
+RUN git clone https://github.com/agab0110/Progetto-ASD.git
 
-WORKDIR /ASD-Project
+WORKDIR /Progetto-ASD
 
 RUN mvn package
 
-CMD [ "java", "-jar", "target/monopoli-1.0-SNAPSHOT.jar" ]
+CMD [ "java", "-jar", "target/progetto-1.0-SNAPSHOT.jar" ]
