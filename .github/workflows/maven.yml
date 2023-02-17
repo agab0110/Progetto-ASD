@@ -5,6 +5,17 @@ on:
     branches: [ "master" ]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+    - name: Run test case with Maven
+      run: mvn -B clean test
+
   build:
     runs-on: ubuntu-latest
 
