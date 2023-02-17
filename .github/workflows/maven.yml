@@ -13,6 +13,8 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
+        distribution: 'temurin'
+        cache: maven
     - name: Run test case with Maven
       run: mvn -B clean test
 
