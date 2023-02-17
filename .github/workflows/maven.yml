@@ -15,6 +15,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+        
     - name: Run test case with Maven
       run: mvn -B clean test
 
